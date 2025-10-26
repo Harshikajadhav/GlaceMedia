@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Animation with Transparent Background</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100%;
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      perspective: 1200px; /* Depth for 3D space */
+    }
+
+    /* Styles for the shapes */
+    .shape {
+      position: absolute;
+      top: 50%;
+      width: 100px;
+      height: 100px;
+      opacity: 0;
+      animation: floatShape 3s forwards;
+      border-radius: 10%;
+    }
+
+    .cube {
+      transform: rotateX(45deg);
+      background-color: #FF6F61;
+    }
+
+    .sphere {
+      border-radius: 50%;
+      background-color: #FFD700;
+    }
+
+    .pyramid {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid #32CD32;
+    }
+
+    @keyframes floatShape {
+      0% {
+        opacity: 0;
+        transform: translate3d(-100vw, 0, 0); /* Start from left */
+      }
+      50% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0); /* Reach center */
+      }
+      100% {
+        opacity: 0;
+        transform: translate3d(100vw, 0, 0); /* Move to right */
+      }
+    }
+
+    /* Container for the text */
+    .text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+    }
+
+    /* Headline animation (coming from right) */
+    .headline {
+      margin: 20px 0;
+      font-size: 2rem;
+      opacity: 0;
+      animation: fadeInRight 3s forwards;
+    }
+
+    /* Subline animation (coming from left) */
+    .subline {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      opacity: 0;
+      animation: fadeInLeft 3s forwards;
+    }
+
+    /* Animation for text coming from the right */
+    @keyframes fadeInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(100vw); /* Start from right */
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0); /* End at the center */
+      }
+    }
+
+    /* Animation for text coming from the left */
+    @keyframes fadeInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-100vw); /* Start from left */
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0); /* End at the center */
+      }
+    }
+
+    /* Adjust the position of the shapes to create two rows */
+    .row {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      width: 100%;
+      left: 0;
+    }
+
+    .row-1 {
+      top: 25%;
+    }
+
+    .row-2 {
+      top: 60%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- First row of shapes -->
+    <div class="row row-1">
+      <div class="shape cube"></div>
+      <div class="shape sphere"></div>
+      <div class="shape pyramid"></div>
+      <div class="shape cube"></div>
+      <div class="shape sphere"></div>
+      <div class="shape pyramid"></div>
+      <div class="shape cube"></div>
+      <div class="shape sphere"></div>
+      <div class="shape pyramid"></div>
+      <div class="shape cube"></div>
+    </div>
+
+    <!-- Second row of shapes -->
+    <div class="row row-2">
+      <div class="shape pyramid"></div>
+      <div class="shape sphere"></div>
+      <div class="shape cube"></div>
+      <div class="shape pyramid"></div>
+      <div class="shape sphere"></div>
+      <div class="shape cube"></div>
+      <div class="shape pyramid"></div>
+      <div class="shape sphere"></div>
+      <div class="shape cube"></div>
+      <div class="shape pyramid"></div>
+    </div>
+
+    <!-- Text Animation -->
+    <div class="text-container">
+      <span class="headline">
+        We Craft ideas, design experiences, and <br> power growth through strategy, creativity, and <br> collaboration
+      </span>
+      <p class="subline">
+        At our core, we connect brands to audiences through bold ideas and smart solutions!<br>
+        Driven by creativity, fueled by innovation, and focused on your success.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Adjust the animation timing and synchronization for each shape
+    const shapes = document.querySelectorAll('.shape');
+    shapes.forEach((shape, index) => {
+      const delay = index * 0.1; // Stagger the animations
+      shape.style.animationDelay = `${delay}s`;
+    });
+
+    // Adjust the animation for the text
+    const text = document.querySelector('.text-container');
+    text.style.animationDelay = '1s';
+  </script>
+
+</body>
+</html>

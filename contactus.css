@@ -1,0 +1,243 @@
+/* General Styles */
+body {
+    font-family:MyThirdFont ;
+    background: #121212;
+    color: #fff;
+}
+@font-face {
+    font-family: mySecondFont;
+    src: url(fonts/gilroy/Gilroy-Medium.ttf);
+  
+  }
+  @font-face {
+    font-family: myFirstFont;
+    src: url(fonts/sora/Sora-Bold.ttf);
+  
+  }
+  @font-face {font-family: myThirdFont;
+  src: url(fonts/gilroy/Gilroy-Light.ttf);}
+
+.contact-us {
+    text-align: center;
+    padding: 20px;
+    margin:0% 10%;
+}
+
+.contact-heading {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px;
+    gap: 20px;
+}
+
+.leftt-section {
+    flex: 1;
+    text-align: left;
+    max-width: 500px;
+}
+
+.leftt-section h2 {
+    font-size: 30px;
+    margin-bottom:15px;
+    color:white;
+    font-family: MySecondFont;
+    max-width: 300px;
+}
+
+.leftt-section p {
+    margin: 70px 0;
+    font-size: 22px;
+    display:flex;
+    align-items:center;
+
+}
+
+.right-section {
+    flex: 1;
+    position: relative;
+    background: #12a697;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.map-container {
+    position: absolute;
+    top: 5;
+    left: -150px;
+    width: 300px;
+    height: 380px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.form-container {
+    margin-left: 160px;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: #282828;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius:15px;
+    font-family: MySecondFont;
+}
+
+
+.tab-button.active {
+    background: #12a697;
+    color: #121212;
+}
+
+.contact-form {
+    display: none;
+    flex-direction: column;
+}
+
+.contact-form.active {
+    display: flex;
+}
+
+.contact-form input, .contact-form button,.contact-form select {
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-family: MyThirdFont;
+}
+.contact-form select{
+    color:#3e3e3e;
+}
+
+.contact-form button {
+    background:#121212 ;
+    color: white;
+    cursor: pointer;
+}
+
+.newsletter p {
+    margin-top: 20px;
+}
+
+.newsletter input{
+    
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        background-color: rgba(245, 245, 245, 0.5);
+
+        color:#121212;
+        font-family: MyThirdFont;
+    
+} 
+.newsletter button {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color:#121212 ;
+    color:white;
+    font-family: MyThirdFont;
+}
+
+footer {
+    background: #1e1e1e;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-content nav a {
+    color: #00ffcc;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-links a {
+    color: #00ffcc;
+    margin: 0 5px;
+    font-size: 18px;
+}
+.contact-icon{
+    width:40px;
+    height:40px;
+
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leftt-section {
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .right-section {
+        margin-top: 20px;
+        width:100%;
+        
+       
+    }
+
+    .map-container {
+        position: static;
+        width: 80%;
+        height: 180px;
+        margin-top: 20px;
+        margin-left: 20px;
+        
+    }
+
+    .form-container {
+        margin: 0;
+    }
+
+    .leftt-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .leftt-section p {
+        font-size: 1rem;
+    }
+
+    .tab-button {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+}
+

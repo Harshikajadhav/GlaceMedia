@@ -1,0 +1,203 @@
+@media (max-width: 600px) {
+
+  .logo img {
+    height: 40px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .btn-posnawr {
+    max-width: 200px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Card Adjustments */
+  .card__inner {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -20px;
+  }
+  #another_card__content{
+    margin-top: -150px;
+  }
+.card___image{
+  padding-top: 0px;
+}
+#second_card___image{
+  height: 100px;
+  width: 100px;
+  display: none;
+}
+  .card__image-container {
+    width: 100%;
+    margin-top: -60px;
+  }
+  .card__image-container img{
+      height: 200px;
+      width:180px;
+      margin: -40px -20px;
+      padding-top: 0px;
+  }
+  .card__content {
+    margin-left: 65px;
+    margin-top: -3%;
+    
+    align-content: center;
+  }
+
+  .card__title {
+    font-size: 1.5rem;
+  }
+
+
+  .card__description {
+    font-size: 1rem;
+  }
+  .btnn{
+      width: 75%;
+  }
+
+  .cards {
+    grid-template-rows: 1fr; /* Stack cards vertically */
+    gap: 20px;
+  }
+
+  /* Who We Are Section */
+  .who-we-are-content {
+    margin: 0 5%;
+  }
+
+  .who-we-are-content p {
+    font-size: 2rem;
+  }
+
+  /* Community Section */
+  .community-section-divider {
+  display: flex;
+  flex-direction: column;
+    
+  
+    
+  }
+
+  .join-community {
+    width: 100%;
+   
+    
+    text-align: center;
+  
+  }
+
+  .join-community p {
+    font-size:50px;
+    margin:30px -30px;
+  }
+
+  .start-something {
+    width: 100%;
+    border-radius: 100px;
+    padding: 20px;
+  }
+
+  .start-something span {
+    font-size: 1.2rem;
+  }
+
+  /* Team Members Section */
+.team-member {
+position: relative; /* Allows positioning of arrows relative to the container */
+transform: scale(1);
+opacity: 1;
+margin-bottom: 25px;
+}
+.team-member img {
+width: 210px !important; /* Force the width to 120px */
+height: 320px !important; /* Force the height to 120px */
+}
+
+
+/* Arrow Styles */
+#leftArrow {
+display: block; /* Ensure the arrow is visible */
+position: absolute;
+top: 60%; /* Center vertically relative to the container */
+transform: translateY(-50%); /* Perfect vertical centering */
+background-color: transparent; /* No background color */
+background-image: url('image/arrowback.png'); /* Path to your custom arrow image */
+background-size: cover; /* Ensures the image fills the area */
+background-position: center; /* Centers the image */
+border: none; /* No border */
+border-radius: 0; /* Remove circular shape */
+width: 30px; /* Button width */
+height: 30px; /* Button height */
+cursor: pointer; /* Pointer cursor for interaction */
+z-index: 10; /* Ensure it's above other elements */
+text-indent: -9999px; /* Hides any text content */
+overflow: hidden; /* Ensures no text is visible */
+width: 40px !important; /* Increase the width of the arrows */
+height: 40px !important; /* Increase the height of the arrows */
+left: 20px !important;  /* Move the left arrow farther from the image */
+
+}
+
+
+
+#rightArrow {
+display: block; /* Ensure the arrow is visible */
+position: absolute;
+top: 60%; /* Center vertically relative to the container */
+transform: translateY(-50%); /* Perfect vertical centering */
+background-color: transparent; /* No background color */
+background-image: url('image/arrowforward.png'); /* Path to your custom arrow image */
+
+background-size: cover; /* Ensures the image fills the area */
+background-position: center; /* Centers the image */
+border: none; /* No border */
+border-radius: 0; /* Remove circular shape */
+width: 30px; /* Button width */
+height: 30px; /* Button height */
+cursor: pointer; /* Pointer cursor for interaction */
+z-index: 10; /* Ensure it's above other elements */
+text-indent: -9999px; /* Hides any text content */
+overflow: hidden; /* Ensures no text is visible */
+width: 40px !important; /* Increase the width of the arrows */
+height: 40px !important; /* Increase the height of the arrows */
+right: 20px !important;  /* Move the left arrow farther from the image */
+
+}
+
+
+
+/* Hover effect */
+#leftArrow:hover, #rightArrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Positioning the arrows */
+#leftArrow {
+left: -20px; /* Adjust spacing as needed */
+
+}
+
+#rightArrow {
+right: -20px; /* Adjust spacing as needed */
+}
+
+
+
+/* Team Heading */
+.team-heading {
+font-size: 1.5rem;
+margin-top: 10px;
+}
+}
+/* About us mobile code ends */

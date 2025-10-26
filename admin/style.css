@@ -1,0 +1,186 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+    overflow-x: hidden;
+    background-color: #111;
+}
+h1{
+    font-size: 40px;
+}
+.logo{
+    padding: 0;
+    margin: 0;
+    height: 60px;
+    width: 220px;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 50px;
+    color: white;
+}
+.navbar h2{
+    font-size: 30px;
+}
+.navbar i{
+    font-size: 30px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.full{
+    height: 100vh;
+    width: 20%;
+    background-color: rgba(255, 255, 255, 0.31);
+    position: absolute;
+    top: 0;
+    left: -40%;
+    color: black;
+    backdrop-filter: blur(10px);
+    padding: 40px 50px;
+}
+
+.full h4{
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 5px;
+
+}
+.full a{
+    text-decoration: none;
+    color: black;
+}
+.full i{
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 800;
+    font-size: 50px;
+    cursor: pointer;
+}
+.body-content{
+    margin: 0% 10%;
+}
+.main-heading h1{
+    font-size: 50px;
+}
+.homepage-work{
+    display: flex;
+    justify-content: space-evenly;
+}
+table{
+    border-collapse: collapse;
+}
+.homepage-work table, th, td{
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+table, th, td{
+    padding: 15px 10px;
+}
+.min-spacer{
+    height: 10px;
+}
+
+.work-form{
+    border: 1px solid white;
+    border-radius: 40px;
+    width: 100%;
+    color: white;
+    padding: 50px;
+}
+.work-form label{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+input{
+   margin: 10px;
+   padding: 10px 15px;    
+   border: 1px solid #30D5C8;
+   width: 90%;
+   color: white;
+   border-radius: 10px;
+   background: transparent;
+}
+.submit-btn{
+    color: white;
+    background: transparent;
+    padding: 10px 15px;
+    width: 40%;
+    border-radius: 30px;
+    transition: ease-in 0.3s;
+}
+.submit-btn:hover{
+    background-color: #30D5C8;
+}
+.contactus-main{
+    margin: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.message{
+    width: 30%;
+}
+
+.edit-btn, .delete-btn{
+    background-color: green;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 30px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 0px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.delete-btn{
+    background-color: red;
+}
+.delete-btn:hover,
+.delete-btn:focus{
+  background-color: rgb(90, 4, 4);
+ }
+
+.edit-btn:hover,
+.edit-btn:focus{
+  background-color: rgb(0, 62, 0);
+ }
+
+/* News starts */
+.news-content{
+    margin: 0% 10%;
+    display: flex;
+    justify-content: space-around;
+}
+/* News ends */
+
+/* login form code starts*/
+.login-form{
+    margin: 0 30%;
+}
+.login-form input{
+    width: 60%;
+}
+/* login form code ends*/

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Media Agency</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+    }
+
+    /* About Us Section */
+    .about-us-container {
+      position: absolute;
+      z-index: 10;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: textReveal 2s ease-out forwards;
+    }
+
+    .about-us-container span {
+      color: #4CAF50;
+    }
+
+    /* Text Reveal Animation */
+    @keyframes textReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Particle Styles */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background-color: #4CAF50;
+      opacity: 0.7;
+      pointer-events: none;
+      animation: particleMotion 4s ease-in-out infinite;
+      mix-blend-mode: lighten;
+    }
+
+    /* Particle Movement Animation */
+    @keyframes particleMotion {
+      0% {
+        transform: scale(0.5) translateY(100vh);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.2) translateY(-50vh);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.5) translateY(-100vh);
+        opacity: 0.8;
+      }
+    }
+
+    /* Interactive Particle Effect */
+    .interactive {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- About Us Text -->
+  <div class="about-us-container">
+    Welcome to <span>Your Agency</span><br>
+    Creativity and Innovation in Every Pixel
+  </div>
+
+  <!-- Interactive Background Particle Container -->
+  <div class="interactive"></div>
+
+  <script>
+    const particleContainer = document.querySelector('.interactive');
+
+    // Creating an array to store particles
+    const particlesArray = [];
+
+    // Create particle on mouse move
+    function createParticle(e) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      const size = Math.random() * 10 + 10; // Random size between 10px and 20px
+      const speed = Math.random() * 0.5 + 0.5; // Random speed factor
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      // Start position (from mouse cursor)
+      particle.style.left = `${e.clientX}px`;
+      particle.style.top = `${e.clientY}px`;
+
+      // Append to particle container
+      particleContainer.appendChild(particle);
+      particlesArray.push({ 
+        particle, 
+        speed,
+        x: e.clientX, 
+        y: e.clientY, 
+        size 
+      });
+
+      // Remove particle after animation ends
+      setTimeout(() => {
+        particle.remove();
+      }, 4000); // Particle life duration
+    }
+
+    // Function to animate particles to follow the mouse
+    function animateParticles() {
+      particlesArray.forEach(p => {
+        const dx = p.x - p.particle.offsetLeft;
+        const dy = p.y - p.particle.offsetTop;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        const moveX = dx / distance * p.speed;
+        const moveY = dy / distance * p.speed;
+
+        p.particle.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+    }
+
+    // Event Listener for mousemove to create particles
+    document.addEventListener('mousemove', (e) => {
+      createParticle(e);
+      animateParticles(); // Trigger the animation
+    });
+
+    // Function to continuously animate particles
+    function particleAnimation() {
+      animateParticles();
+      requestAnimationFrame(particleAnimation);
+    }
+
+    particleAnimation(); // Start particle animation loop
+
+    // Scroll-based animation for text
+    let isScrolling;
+    window.addEventListener('scroll', () => {
+      document.querySelector('.about-us-container').style.animation = 'textReveal 2s ease-out forwards';
+      
+      clearTimeout(isScrolling);
+      isScrolling = setTimeout(() => {
+        document.querySelector('.about-us-container').style.animation = 'textReveal 2s ease-out forwards';
+      }, 200);
+    });
+  </script>
+
+</body>
+</html>
